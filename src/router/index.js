@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Test from '@/components/Test'
+const Test = ()=>import('@/components/Test')
 
 
 Vue.use(Router)
 
-export default new Router({
+const router =  new Router({
 
   mode: 'history',
 
@@ -17,3 +17,13 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) =>{
+  if(to.meta.requireAuth){
+    next()
+  }else{
+    next()
+  }
+})
+
+export default router

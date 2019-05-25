@@ -1,0 +1,39 @@
+﻿
+@model StudentCreate
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+    <h1>添加一条记录</h1>
+    <form method="post">
+        <div>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div>
+            <label asp-for="BirthDate"></label>
+            <input asp-for="BirthDate" type="date">
+        </div>
+        <div>
+            <label asp-for="Gender"></label>
+            <select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()"></select>
+        </div>
+
+        <button type="submit"> 保存</button>
+    </form>
+</body>
+</html>
+    

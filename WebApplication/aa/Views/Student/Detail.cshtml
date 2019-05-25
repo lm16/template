@@ -1,0 +1,24 @@
+﻿@model Student
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Student</title>
+</head>
+<body>
+    
+    <h1>Detail</h1>
+    @*<h2>@Model.FirstName @Model.LastName @Model.BirthDate</h2>
+    <a asp-action="Index">返回到 Index</a>*@
+
+    <div>Id: @Model.Id</div>
+    <div>姓名: @Model.FirstName @Model.LastName</div>
+    <div>性别: @Model.Gender</div>
+    <div>
+        出生日期: @Model.BirthDate.ToString("yyyy-MM-dd")
+    </div>
+
+    <a asp-action="Index">返回到Index</a>
+</body>
+</html>
